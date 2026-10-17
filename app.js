@@ -27,10 +27,10 @@ let examples = [
 
 async function requestJSON(url, options, { timeout = 32000, signal } = {}) {
   if (staticDemo) {
-    if (!globalThis.HaoHaoHuiDemo) throw new Error('公开体验资源未完整加载，请刷新页面。');
-    if (url === '/api/config') return globalThis.HaoHaoHuiDemo.config;
-    if (url === '/api/examples') return globalThis.HaoHaoHuiDemo.examples;
-    if (url === '/api/reply') return globalThis.HaoHaoHuiDemo.reply(JSON.parse(options && options.body || '{}'));
+    if (!window.HaoHaoHuiDemo) throw new Error('公开体验资源未完整加载，请刷新页面。');
+    if (url === '/api/config') return window.HaoHaoHuiDemo.config;
+    if (url === '/api/examples') return window.HaoHaoHuiDemo.examples;
+    if (url === '/api/reply') return window.HaoHaoHuiDemo.reply(JSON.parse(options && options.body || '{}'));
   }
   const controller = new AbortController();
   const cancel = () => controller.abort();

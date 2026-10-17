@@ -67,7 +67,7 @@
     let generated = template[tone];
     if (input.recipient === 'mother') generated = `妈，${generated}`;
     else if (input.recipient === 'father') generated = `爸，${generated}`;
-    else if (input.recipient === 'elder') generated = generated.replaceAll('你', '您');
+    else if (input.recipient === 'elder') generated = generated.replace(/你/g, '您');
     return {
       content_summary: '原文摘录：' + Array.from(text).slice(0, 140).join('') + (Array.from(text).length > 140 ? '…' : ''),
       possible_meanings: template.meanings,
@@ -84,4 +84,4 @@
     config: { mode: 'demo', liveAvailable: false, mediaAvailable: false, videoAvailable: false },
     reply
   };
-}(globalThis));
+}(typeof window === 'object' ? window : this));
