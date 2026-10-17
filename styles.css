@@ -255,10 +255,13 @@ body[data-host="android"] .privacy-note { margin-top: 7px; }
   body[data-host="android"] .copy-row { background: #fbfcfe; }
 }
 
-@media (max-width: 360px) {
-  .container { width: calc(100% - 18px); }
+@media (max-width: 420px) {
   .preference-row { grid-template-columns: 1fr; }
   .preference-row label + label { margin: 8px 0 0; }
+}
+
+@media (max-width: 360px) {
+  .container { width: calc(100% - 18px); }
   .input-panel, .output-panel { padding: 18px 14px; }
   .tiny-label { display: none; }
   .attachment-tools span { max-width: 185px; }
