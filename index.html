@@ -37,15 +37,15 @@
         <textarea id="demo-reply" rows="7">刘震云讲郓哥那两句话牵出几条人命，这个例子挺抓人的。一句话的分量有时候真比一堆道理重，不过那句让人动心的话，估计谁也说不准。</textarea>
         <div class="reply-actions"><button type="button" id="copy">复制这段回复</button><button type="button" id="reset" class="quiet">恢复原文</button></div><p id="copy-status" class="status" role="status" aria-live="polite">可以在这里修改，不会发送或上传。</p>
         <div class="person-note"><span aria-hidden="true">↳</span><div><strong>同一段内容，回给不同的人。</strong><p>本机助手可以记住你填写的称呼和关系习惯。它们是你的备注，不会自动读取好友名单或给人贴标签。</p></div></div>
-        <div class="bubble-preview"><span class="mini-ball" aria-hidden="true">知</span><div><strong>需要时唤醒，用完就收起。</strong><p>点击悬浮球，或按 <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>R</kbd>。<br>拖入视频文件／分享链接 → 查看依据 → 编辑复制。</p></div></div>
+        <div class="bubble-preview"><span class="mini-ball" aria-hidden="true">知</span><div><strong>需要时唤醒，用完就收起。</strong><p>点击悬浮球，或按 <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>R</kbd>。<br>选取微信卡片 → 核对原视频 → 查看依据 → 编辑复制。</p></div></div>
       </article>
     </div>
   </section>
   <section class="install" id="install" aria-labelledby="install-title">
-    <div><p class="eyebrow">把体验带回自己的电脑</p><h2 id="install-title">一个本机包，按需启用。</h2><p>悬浮客户端约 84 KiB，使用 Windows 系统组件。<br>语音模型首次下载后留在本机，微信连接器单独安装。</p></div>
+    <div><p class="eyebrow">把体验带回自己的电脑</p><h2 id="install-title">一个本机包，按需启用。</h2><p>悬浮客户端约 91 KiB，使用 Windows 系统组件。<br>语音模型首次下载后留在本机，微信连接器单独安装。</p></div>
     <div class="install-card"><ol><li><b>01</b><span><strong>解压本机体验包</strong>准备 Node.js 22+；视频另需 Python 3.11 / 3.12。</span></li><li><b>02</b><span><strong>运行 setup.cmd</strong>填自己的模型密钥，安装视频依赖与语音模型。</span></li><li><b>03</b><span><strong>运行 start-local.cmd</strong>打开悬浮球。视频号评论功能另装连接器并登录自己的微信。</span></li></ol><a class="button wide" href="https://github.com/MTMT0111/haohaohui-demo/releases/download/desktop-2026.10.21/zhiyi-windows-local.zip">下载 Windows 本机包 <span aria-hidden="true">↓</span></a><div class="download-links"><a href="https://github.com/MTMT0111/haohaohui-demo/releases/tag/desktop-2026.10.21">可选连接器、校验值与说明 ↗</a><a href="./text-demo.html">只体验文字示例 ↗</a></div></div>
   </section>
-  <section class="faq" aria-label="使用前说明"><details><summary>把这个链接发给朋友，朋友能直接用吗？</summary><p>可以随时打开本页、编辑复制实测回复和使用文字示例；这些不调用实时 AI。要分析自己的视频和微信内容，需要下载本机包、配置自己的模型密钥，视频号功能还需要本人登录的微信会话。公开页不会借用作者的微信或 API 密钥。</p></details><details><summary>微信卡片能直接拖入吗？</summary><p>如果微信提供了真实文件或分享链接，可以拖入本机悬浮窗。某些版本只提供私有卡片格式，助手无法取得素材，会明确提示；此时可复制原始链接，或用视频号搜索核对作者后选中。不会只凭卡片标题假装理解完整视频。直接拖入视频文件也不会自动得到其评论区。</p></details><details><summary>多长的视频都能分析吗？</summary><p>已移除 60 秒限制，按每 3 分钟一段处理完整音轨并取 6 帧。真实验证通过 6 分 16 秒的视频。当前文件上限 512 MiB / 4K，处理时限 90 分钟，另有证据容量限制；不能保证任意时长、编码和权限的视频都成功，超限会报错，不截断后冒充完整分析。</p></details><details><summary>微信连接器会改变什么？</summary><p>可选连接器基于开源 wx_channel，需要本人确认安装 SunnyRoot 根证书并启用微信进程代理，仅使用本机登录会话。微信升级、权限或会话过期可能影响可用性。文件分析不需要安装它；安装步骤和退出说明随包提供。</p></details></section>
+  <section class="faq" aria-label="使用前说明"><details><summary>把这个链接发给朋友，朋友能直接用吗？</summary><p>可以随时打开本页、编辑复制实测回复和使用文字示例；这些不调用实时 AI。要分析自己的视频和微信内容，需要下载本机包、配置自己的模型密钥，视频号功能还需要本人登录的微信会话。公开页不会借用作者的微信或 API 密钥。</p></details><details><summary>微信卡片能直接拖入吗？</summary><p>聊天中的视频号卡片可能无法拖入。此时点“选取微信视频”或按 Ctrl+Alt+V，框住卡片标题和作者，本机识别后自动搜索；核对作者、标题后选原视频，不必播放或手输关键词。框选只用于定位，完整视频与评论由后台读取；找不到原视频请取消。视频文件和可复制的原分享链接仍可拖入，视频文件本身不包含评论身份。</p></details><details><summary>多长的视频都能分析吗？</summary><p>已移除 60 秒限制，按每 3 分钟一段处理完整音轨并取 6 帧。真实验证通过 6 分 16 秒的视频。当前文件上限 512 MiB / 4K，处理时限 90 分钟，另有证据容量限制；不能保证任意时长、编码和权限的视频都成功，超限会报错，不截断后冒充完整分析。</p></details><details><summary>微信连接器会改变什么？</summary><p>可选连接器基于开源 wx_channel，需要本人确认安装 SunnyRoot 根证书并启用微信进程代理，仅使用本机登录会话。微信升级、权限或会话过期可能影响可用性。文件分析不需要安装它；安装步骤和退出说明随包提供。</p></details></section>
 </main>
 <footer><span>知意 · 理解在前，回复由你。</span><span>Windows 实测 · 手机端尚待实体设备验收</span></footer>
 </body></html>
